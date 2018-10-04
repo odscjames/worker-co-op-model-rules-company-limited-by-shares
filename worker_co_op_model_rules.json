@@ -7,7 +7,24 @@
     },
 
     { "type": "clause",
-      "content": "In these Articles:"
+      "content": "In these Articles:",
+      "sublist": {
+          "type": "basic"
+
+
+      },
+
+
+    { "type": "clause",
+      "content": "Unless the context requires otherwise, other words or expressions contained in these Articles bear the same meaning as in the Companies Act 2006 as in force on the date when these Articles become binding on the Co-operative.\nSchedule 1 to the Companies (Model Articles) Regulations 2008 shall apply to the Co-operative, save where amended or replaced by these Articles.\nIn the case of any variation or inconsistency between these Articles and the model articles, these Articles shall prevail.",
+      "sublist": {
+          "type": "basic",
+
+
+
+
+      },
+
     }
 
 
