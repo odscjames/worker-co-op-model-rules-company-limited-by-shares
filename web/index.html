@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Legal XML Parser</title>
+</head>
+<body>
+
+    <div id="form">
+        <form onsubmit="submitForm(); return false;">
+
+            <textarea name="data"></textarea>
+
+            <input type="submit">
+
+        </form>
+    </div>
+    <div id="results">
+
+    </div>
+
+    <script src="jquery.js"></script>
+    <script src="legal-xml-parser.js"></script>
+    <script>
+        function submitForm() {
+            var lxmlp = new LegalXMLParser($('form textarea').val())
+            $('#form').hide();
+            $('#results').show().html(lxmlp.get())
+        }
+    </script>
+
+</body>
+</html>

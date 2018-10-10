@@ -1,30 +1,63 @@
-<document>
+<?xml version="1.0" encoding="utf-8"?>
+<contract xmlns="urn:oasis:names:tc:eContracts:1:0">
 
-    <contents>
+    <title>
+        <text>Sample of the five elements at level 1</text>
+    </title>
 
-        <header>
-            <content>Interpretations</content>
-        </header>
+    <subtitle>This file is to test : - title - sub-title - contract-front -
+        date-block - parties - party - body - back -
+        attachments - attachment
+    </subtitle>
 
-        <clause>
-            <content>In these Articles:</content>
-            <sublist type="basic">
-                <item>**“Address”** means a postal address or, for the purposes of electronic communication, a fax number, email address or telephone number for receiving text messages;</item>
-                <item>**“Articles”** means the Company’s articles of association;</item>
-            </sublist>
-        </clause>
+    <body>
 
-        <clause>
-            <content>Unless the context requires otherwise, other words or expressions contained in these Articles bear the same meaning as in the Companies Act 2006 as in force on the date when these Articles become binding on the Co-operative.
-Schedule 1 to the Companies (Model Articles) Regulations 2008 shall apply to the Co-operative, save where amended or replaced by these Articles.
-    In the case of any variation or inconsistency between these Articles and the model articles, these Articles shall prevail.
-            </content>
-        </clause>
+        <item>
+            <title>
+                <text>Interpretations</text>
+            </title>
+        </item>
 
-        <header>
-            <content>Offer of shares and debentures</content>
-        </header>
+        <item>
+            <block number-type="disc">
+                <block><text>In these Articles:</text></block>
+                <item>
+                    <block>
+                        <text>**“Address”** means a postal address or, for the purposes of electronic communication, a
+                            fax number, email address or telephone number for receiving text messages;
+                        </text>
+                    </block>
+                </item>
+                <item>
+                    <block>
+                        <text>**“Articles”** means the Company’s articles of association;</text>
+                    </block>
+                </item>
+            </block>
+        </item>
 
-    </contents>
+        <item>
+            <block>
+                <text>
+                    Unless the context requires otherwise, other words or expressions contained in these Articles bear
+                    the same meaning as in the Companies Act 2006 as in force on the date when these Articles become
+                    binding on the Co-operative.
+                    Schedule 1 to the Companies (Model Articles) Regulations 2008 shall apply to the Co-operative, save
+                    where amended or replaced by these Articles.
+                    In the case of any variation or inconsistency between these Articles and the model articles, these
+                    Articles shall prevail.
+                </text>
+            </block>
+        </item>
 
-</document>
+        <item>
+            <title>
+                <text>Offer of shares and debentures</text>
+            </title>
+        </item>
+
+
+    </body>
+
+
+</contract>
