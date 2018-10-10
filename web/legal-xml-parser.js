@@ -39,8 +39,6 @@ class LegalXMLParser {
 
     _process_body(node) {
 
-
-
         for (var i = 0; i < node.childNodes.length; i++) {
           var childNode = node.childNodes[i];
           if(childNode.nodeType !== Node.TEXT_NODE) {
@@ -51,12 +49,38 @@ class LegalXMLParser {
     }
 
     _process_body_node(node) {
-        console.log(node)
+
+        if (this._is_node_title(node)) {
+
+            this._process_body_node_title(node);
+
+
+        }
+    }
+
+    _is_node_title(node) {
+        var foundTitle = false;
+        for (var i = 0; i < node.childNodes.length; i++) {
+          var childNode = node.childNodes[i];
+          if(childNode.nodeType !== Node.TEXT_NODE) {
+            if(childNode.localName != 'title') {
+                return false
+            } else if(childNode.localName == 'title') {
+                foundTitle = true;
+            }
+
+          }
+        }
+        return foundTitle;
+    }
+
+    _process_body_node_title(node) {
+        this.out_body += '<h3>' + node.textContent.trim() + '</h3>';
     }
 
     get() {
 
-
+        return this.out_body;
 
 
     }
