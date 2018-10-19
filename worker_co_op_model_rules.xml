@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<contract xmlns="urn:oasis:names:tc:eContracts:1:0">
+<contract>
 
     <title>
         <text>Sample of the five elements at level 1</text>
@@ -12,11 +12,7 @@
 
     <body>
 
-        <item>
-            <title>
-                <text>Interpretations</text>
-            </title>
-        </item>
+        <title>Interpretations</title>
 
         <item>
             <block number-type="disc">
@@ -50,11 +46,7 @@
             </block>
         </item>
 
-        <item>
-            <title>
-                <text>Offer of shares and debentures</text>
-            </title>
-        </item>
+        <title>Offer of shares and debentures</title>
 
         <item>
             <block>
@@ -66,11 +58,7 @@
             </block>
         </item>
 
-        <item>
-            <title>
-                <text>Purpose</text>
-            </title>
-        </item>
+        <title>Purpose</title>
 
         <item>
             <block>
@@ -85,11 +73,7 @@
 
         <!-- Do not include the following if the Co-operative wishes to have unrestricted objects and may carry out any lawful activity.   -->
 
-        <item>
-            <title>
-                <text>OBJECTS</text>
-            </title>
-        </item>
+        <title>OBJECTS</title>
 
         <item>
             <block>
@@ -99,11 +83,7 @@
             </block>
         </item>
 
-        <item>
-            <title>
-                <text>POWERS</text>
-            </title>
-        </item>
+        <title>POWERS</title>
 
         <item>
             <block>
@@ -114,11 +94,7 @@
             </block>
         </item>
 
-        <item>
-            <title>
-                <text>MEMBERSHIP</text>
-            </title>
-        </item>
+        <title>MEMBERSHIP</title>
 
         <item>
             <block>

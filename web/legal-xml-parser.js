@@ -65,19 +65,7 @@ class LegalXMLParser {
     }
 
     _is_node_title(node) {
-        var foundTitle = false;
-        for (var i = 0; i < node.childNodes.length; i++) {
-          var childNode = node.childNodes[i];
-          if(childNode.nodeType !== Node.TEXT_NODE) {
-            if(childNode.localName != 'title') {
-                return false
-            } else if(childNode.localName == 'title') {
-                foundTitle = true;
-            }
-
-          }
-        }
-        return foundTitle;
+        return node.localName == 'title';
     }
 
     _is_node_block(node) {
