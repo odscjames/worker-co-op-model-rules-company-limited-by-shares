@@ -126,6 +126,9 @@ class LegalXMLParser {
                 if (this.marker_stack[0]['type'] == 'number') {
                     marker = this.marker_stack[0]['next'] + '.';
                     this.marker_stack[0]['next']++;
+                } if (this.marker_stack[0]['type'] == 'loweralpha') {
+                    marker = '(' + this._marker_number_to_alpha(this.marker_stack[0]['next']) + ')';
+                    this.marker_stack[0]['next']++;
                 } else if (this.marker_stack[0]['type'] == 'disc') {
                     marker = 'o.';
                 }
@@ -141,6 +144,11 @@ class LegalXMLParser {
                     if (blockNode.getAttribute('number-type') == 'disc') {
                         this.marker_stack.unshift({
                             'type': 'disc',
+                        })
+                    } else if (blockNode.getAttribute('number-type') == 'loweralpha') {
+                        this.marker_stack.unshift({
+                            'type': 'loweralpha',
+                            'next': 1,
                         })
                     } else {
                         this.marker_stack.unshift({
@@ -172,6 +180,10 @@ class LegalXMLParser {
 
     }
 
+
+    _marker_number_to_alpha(number) {
+        return String.fromCharCode(number + 96);
+    }
 }
 
 
