@@ -126,6 +126,8 @@ class LegalXMLParser {
                 if (this.marker_stack[0]['type'] == 'number') {
                     marker = this.marker_stack[0]['next'] + '.';
                     this.marker_stack[0]['next']++;
+                } else if (this.marker_stack[0]['type'] == 'disc') {
+                    marker = 'o.';
                 }
 
                 this.out_body += '<div class="nested'+this.marker_stack.length+'">' + marker + ' ' + childNode.textContent.trim() + '</div>';
@@ -136,10 +138,16 @@ class LegalXMLParser {
 
                 if (!addedToMarkerStack) {
                     addedToMarkerStack = true;
-                    this.marker_stack.unshift({
-                        'type': 'number',
-                        'next': 1,
-                    })
+                    if (blockNode.getAttribute('number-type') == 'disc') {
+                        this.marker_stack.unshift({
+                            'type': 'disc',
+                        })
+                    } else {
+                        this.marker_stack.unshift({
+                            'type': 'number',
+                            'next': 1,
+                        })
+                    }
                 }
 
                 this._process_body_node_block(childNode);
