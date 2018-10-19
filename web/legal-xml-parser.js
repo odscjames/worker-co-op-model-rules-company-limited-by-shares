@@ -115,6 +115,8 @@ class LegalXMLParser {
 
     _process_body_node_block_actual_block_node(blockNode) {
 
+        var addedToMarkerStack = false;
+
         for (var i = 0; i < blockNode.childNodes.length; i++) {
           var childNode = blockNode.childNodes[i];
           if(childNode.nodeType !== Node.TEXT_NODE) {
@@ -132,17 +134,23 @@ class LegalXMLParser {
                 this._process_body_node_block_actual_block_node(childNode);
             } else if(childNode.localName == 'item') {
 
-                this.marker_stack.unshift({
-                    'type': 'number',
-                    'next': 1,
-                })
+                if (!addedToMarkerStack) {
+                    addedToMarkerStack = true;
+                    this.marker_stack.unshift({
+                        'type': 'number',
+                        'next': 1,
+                    })
+                }
 
                 this._process_body_node_block(childNode);
 
-                this.marker_stack.shift();
             }
 
           }
+        }
+
+        if (addedToMarkerStack) {
+            this.marker_stack.shift();
         }
 
 
