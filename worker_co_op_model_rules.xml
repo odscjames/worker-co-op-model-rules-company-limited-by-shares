@@ -102,6 +102,32 @@
         </item>
 
 
+        <!-- LOTS MORE TO ADD HERE   -->
+
+
+        <title>Resolutions</title>
+
+
+        <item-with-children marker-type="loweralpha">
+            <item>Decisions at general meetings shall be made by passing resolutions:</item>
+
+            <child-item>
+                <item>Decisions involving an alteration to articles that have been Entrenched in accordance with
+                    section 22 of the Act require the approval of 100% of the Members.</item>
+            </child-item>
+
+            <child-item>
+                <item>
+                    The following decisions must be made by special resolution:
+                </item>
+            </child-item>
+
+
+            <child-item>
+                <item>All other decisions shall be made by ordinary resolution.</item>
+            </child-item>
+        </item-with-children>
+
     </body>
 
 
