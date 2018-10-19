@@ -126,9 +126,7 @@ class LegalXMLParser {
                     this.marker_stack[0]['next']++;
                 }
 
-                this.out_body += '<div>' + marker + ' ' + childNode.textContent.trim() + '</div>';
-
-
+                this.out_body += '<div class="nested'+this.marker_stack.length+'">' + marker + ' ' + childNode.textContent.trim() + '</div>';
 
             } else if(childNode.localName == 'block') {
                 this._process_body_node_block_actual_block_node(childNode);
