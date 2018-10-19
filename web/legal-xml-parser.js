@@ -56,84 +56,58 @@ class LegalXMLParser {
     }
 
     _process_body_node(node) {
-
-        if (this._is_node_title(node)) {
+        if (node.localName == 'title') {
             this._process_body_node_title(node);
-        } else if(this._is_node_block(node)) {
-            this._process_body_node_block(node);
+        } else if(node.localName == 'item') {
+            this._process_body_node_item(node);
+        } else if(node.localName == 'item-with-children') {
+            this._process_body_node_item_with_children(node);
         }
-    }
-
-    _is_node_title(node) {
-        return node.localName == 'title';
-    }
-
-    _is_node_block(node) {
-        var foundBlock = false;
-        for (var i = 0; i < node.childNodes.length; i++) {
-          var childNode = node.childNodes[i];
-          if(childNode.nodeType !== Node.TEXT_NODE) {
-            if(childNode.localName != 'block') {
-                return false
-            } else if(childNode.localName == 'block') {
-                foundBlock = true;
-            }
-
-          }
-        }
-        return foundBlock;
     }
 
     _process_body_node_title(node) {
         this.out_body += '<h3>' + node.textContent.trim() + '</h3>';
     }
 
-    _process_body_node_block(node) {
+
+    _process_body_node_item(node) {
+
+        var marker = '';
+        if (this.marker_stack[0]['type'] == 'number') {
+            marker = this.marker_stack[0]['next'] + '.';
+        this.marker_stack[0]['next']++;
+        } if (this.marker_stack[0]['type'] == 'loweralpha') {
+            marker = '(' + this._marker_number_to_alpha(this.marker_stack[0]['next']) + ')';
+        this.marker_stack[0]['next']++;
+        } else if (this.marker_stack[0]['type'] == 'disc') {
+            marker = 'o.';
+        }
+
+        this.out_body += '<div class="nested'+this.marker_stack.length+'">' + marker + ' ' + node.textContent.trim() + '</div>';
+
+    }
+
+    _process_body_node_item_with_children(node) {
+
+        var addedToMarkerStack = false;
 
         for (var i = 0; i < node.childNodes.length; i++) {
           var childNode = node.childNodes[i];
           if(childNode.nodeType !== Node.TEXT_NODE) {
-            if(childNode.localName == 'block') {
-                this._process_body_node_block_actual_block_node(childNode);
-            }
-          }
-        }
 
-    }
+            if(childNode.localName == 'item') {
 
-    _process_body_node_block_actual_block_node(blockNode) {
+                this._process_body_node_item(node);
 
-        var addedToMarkerStack = false;
-
-        for (var i = 0; i < blockNode.childNodes.length; i++) {
-          var childNode = blockNode.childNodes[i];
-          if(childNode.nodeType !== Node.TEXT_NODE) {
-            if(childNode.localName == 'text') {
-
-                var marker = '';
-                if (this.marker_stack[0]['type'] == 'number') {
-                    marker = this.marker_stack[0]['next'] + '.';
-                    this.marker_stack[0]['next']++;
-                } if (this.marker_stack[0]['type'] == 'loweralpha') {
-                    marker = '(' + this._marker_number_to_alpha(this.marker_stack[0]['next']) + ')';
-                    this.marker_stack[0]['next']++;
-                } else if (this.marker_stack[0]['type'] == 'disc') {
-                    marker = 'o.';
-                }
-
-                this.out_body += '<div class="nested'+this.marker_stack.length+'">' + marker + ' ' + childNode.textContent.trim() + '</div>';
-
-            } else if(childNode.localName == 'block') {
-                this._process_body_node_block_actual_block_node(childNode);
-            } else if(childNode.localName == 'item') {
+            } else if(childNode.localName == 'child-item') {
 
                 if (!addedToMarkerStack) {
                     addedToMarkerStack = true;
-                    if (blockNode.getAttribute('number-type') == 'disc') {
+                    if (node.getAttribute('marker-type') == 'disc') {
                         this.marker_stack.unshift({
                             'type': 'disc',
                         })
-                    } else if (blockNode.getAttribute('number-type') == 'loweralpha') {
+                    } else if (node.getAttribute('marker-type') == 'loweralpha') {
                         this.marker_stack.unshift({
                             'type': 'loweralpha',
                             'next': 1,
@@ -146,7 +120,19 @@ class LegalXMLParser {
                     }
                 }
 
-                this._process_body_node_block(childNode);
+                for (var j = 0; j < childNode.childNodes.length; j++) {
+                  var childNodeWithinList = childNode.childNodes[j];
+                  if(childNodeWithinList.nodeType !== Node.TEXT_NODE) {
+                    if (childNodeWithinList.localName == 'item') {
+                        this._process_body_node_item(childNodeWithinList);
+                    } else if (childNodeWithinList.localName == 'item-with-children') {
+                           // TODO
+
+                        this._process_body_node_item_with_children(childNode);
+                    }
+                  }
+                }
+
 
             }
 

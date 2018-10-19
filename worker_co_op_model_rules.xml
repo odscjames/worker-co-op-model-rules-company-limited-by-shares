@@ -14,61 +14,46 @@
 
         <title>Interpretations</title>
 
-        <item>
-            <block number-type="disc">
-                <block><text>In these Articles:</text></block>
+        <item-with-children marker-type="disc">
+            <item>In these Articles:</item>
+
+            <child-item>
+                <item>**“Address”** means a postal address or, for the purposes of electronic communication, a
+                    fax number, email address or telephone number for receiving text messages;</item>
+            </child-item>
+
+            <child-item>
                 <item>
-                    <block>
-                        <text>**“Address”** means a postal address or, for the purposes of electronic communication, a
-                            fax number, email address or telephone number for receiving text messages;
-                        </text>
-                    </block>
+                    **“Articles”** means the Company’s articles of association;
                 </item>
-                <item>
-                    <block>
-                        <text>**“Articles”** means the Company’s articles of association;</text>
-                    </block>
-                </item>
-            </block>
-        </item>
+            </child-item>
+        </item-with-children>
 
         <item>
-            <block>
-                <text>
-                    Unless the context requires otherwise, other words or expressions contained in these Articles bear
-                    the same meaning as in the Companies Act 2006 as in force on the date when these Articles become
-                    binding on the Co-operative.
-                    Schedule 1 to the Companies (Model Articles) Regulations 2008 shall apply to the Co-operative, save
-                    where amended or replaced by these Articles.
-                    In the case of any variation or inconsistency between these Articles and the model articles, these
-                    Articles shall prevail.
-                </text>
-            </block>
+            Unless the context requires otherwise, other words or expressions contained in these Articles bear
+            the same meaning as in the Companies Act 2006 as in force on the date when these Articles become
+            binding on the Co-operative.
+            Schedule 1 to the Companies (Model Articles) Regulations 2008 shall apply to the Co-operative, save
+            where amended or replaced by these Articles.
+            In the case of any variation or inconsistency between these Articles and the model articles, these
+            Articles shall prevail.
         </item>
 
         <title>Offer of shares and debentures</title>
 
         <item>
-            <block>
-                <text>
-                    The Co-operative is a private company and accordingly shall not offer to the public any type of shares
-                    in or debentures of the Co-operative nor shall it allot or agree to allot such shares or debentures
-                    with a view to their being offered for sale to the public.
-                </text>
-            </block>
+            The Co-operative is a private company and accordingly shall not offer to the public any type of shares
+            in or debentures of the Co-operative nor shall it allot or agree to allot such shares or debentures
+            with a view to their being offered for sale to the public.
         </item>
 
         <title>Purpose</title>
 
         <item>
-            <block>
-                <text>
-                    The purpose of the Co-operative is to carry out its function as a co-operative and to abide by the
-                    internationally recognised co-operative values and Co-operative Principles as defined by the International
-                    Co-operative Alliance. This article is Entrenched in accordance with section 22 of the Act; any
-                    alteration to this article requires the approval of 100% of the Members.
-                </text>
-            </block>
+            The purpose of the Co-operative is to carry out its function as a co-operative and to abide by the
+            internationally recognised co-operative values and Co-operative Principles as defined by the International
+            Co-operative Alliance. This article is Entrenched in accordance with section 22 of the Act; any
+            alteration to this article requires the approval of 100% of the Members.
         </item>
 
         <!-- Do not include the following if the Co-operative wishes to have unrestricted objects and may carry out any lawful activity.   -->
@@ -76,66 +61,44 @@
         <title>OBJECTS</title>
 
         <item>
-            <block>
-                <text>
-                    The objects of the Co-operative are specifically restricted to carry on the business as a co-operative……
-                </text>
-            </block>
+            The objects of the Co-operative are specifically restricted to carry on the business as a co-operative……
         </item>
 
         <title>POWERS</title>
 
         <item>
-            <block>
-                <text>
-                    To further its objects the Co-operative may do all such lawful things as may further the Co-operative's objects and,
-                    in particular, may borrow or raise funds for any purpose.
-                </text>
-            </block>
+            To further its objects the Co-operative may do all such lawful things as may further the Co-operative's objects and,
+            in particular, may borrow or raise funds for any purpose.
         </item>
 
         <title>MEMBERSHIP</title>
 
         <item>
-            <block>
-                <text>
-                    The first Members of the Co-operative will be the subscribers to the memorandum of association of the
-                    Co-operative. Only Employees may be Members of the Co-operative.
-                </text>
-            </block>
+            The first Members of the Co-operative will be the subscribers to the memorandum of association of the
+            Co-operative. Only Employees may be Members of the Co-operative.
         </item>
 
-        <item>
-            <block number-type="loweralpha">
-                <block><text>
-                    All Employees on taking up employment with the Co-operative may be admitted to membership of the Co-operative,
-                    except that the Co-operative in a general meeting may by a majority vote decide to exclude from membership:
-                </text></block>
+        <item-with-children marker-type="loweralpha">
+            <item>All Employees on taking up employment with the Co-operative may be admitted to membership of the Co-operative,
+                    except that the Co-operative in a general meeting may by a majority vote decide to exclude from membership:</item>
+
+            <child-item>
+                <item>Newly appointed Employees during such reasonable probationary period as may be specified
+                            in their terms and conditions of employment;</item>
+            </child-item>
+
+            <child-item>
                 <item>
-                    <block>
-                        <text>Newly appointed Employees during such reasonable probationary period as may be specified
-                            in their terms and conditions of employment;
-                        </text>
-                    </block>
-                </item>
-                <item>
-                    <block>
-                        <text>Employees working less than a prescribed number of hours per week (or per month); provided
+                    Employees working less than a prescribed number of hours per week (or per month); provided
                             that any such criteria for exclusion is applied equally to all Employees.
-                        </text>
-                    </block>
                 </item>
-            </block>
-        </item>
+            </child-item>
+        </item-with-children>
 
         <item>
-            <block>
-                <text>
-                    In accordance with the Co-operative Principle of voluntary and open membership, whilst the Co-operative shall
-                    undertake to encourage its Employees to become Members, membership must be voluntary and as a result cannot
-                    be a condition of employment.
-                </text>
-            </block>
+            In accordance with the Co-operative Principle of voluntary and open membership, whilst the Co-operative shall
+            undertake to encourage its Employees to become Members, membership must be voluntary and as a result cannot
+            be a condition of employment.
         </item>
 
 
