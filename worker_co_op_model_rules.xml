@@ -117,9 +117,38 @@
             </child-item>
 
             <child-item>
-                <item>
-                    The following decisions must be made by special resolution:
-                </item>
+                <item-with-children marker-type="number">
+                    <item>
+                        The following decisions must be made by special resolution:
+                    </item>
+                    <child-item>
+                        <item>
+                            Decisions involving an alteration to the Articles of the Co-operative, except where an
+                            article is Entrenched as detailed above;
+                        </item>
+                    </child-item>
+                    <child-item>
+                        <item>
+                           Decisions to expel Members;
+                        </item>
+                    </child-item>
+                    <child-item>
+                        <item>
+                            Decisions to dispose of assets of the Co-operative equivalent in value to one-third of the
+                            Co-operative’s last published balance sheet, as detailed in these Articles;
+                        </item>
+                    </child-item>
+                    <child-item>
+                        <item>
+                            The decision to wind up the Co-operative;
+                        </item>
+                    </child-item>
+                    <child-item>
+                        <item>
+                            Other decisions which are required so by statute.
+                        </item>
+                    </child-item>
+                </item-with-children>
             </child-item>
 
 

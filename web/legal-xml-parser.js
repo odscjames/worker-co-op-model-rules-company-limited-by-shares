@@ -126,9 +126,7 @@ class LegalXMLParser {
                     if (childNodeWithinList.localName == 'item') {
                         this._process_body_node_item(childNodeWithinList);
                     } else if (childNodeWithinList.localName == 'item-with-children') {
-                           // TODO
-
-                        this._process_body_node_item_with_children(childNode);
+                        this._process_body_node_item_with_children(childNodeWithinList);
                     }
                   }
                 }
