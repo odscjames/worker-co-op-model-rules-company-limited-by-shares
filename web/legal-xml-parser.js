@@ -12,6 +12,13 @@ class LegalXMLParser {
         var oParser = new DOMParser();
         var oDOM = oParser.parseFromString(data, "application/xml");
 
+        this.marker_stack =  [
+            {
+                'type': 'number',
+                'next': 1
+            }
+        ];
+
         for (var i = 0; i < oDOM.firstChild.childNodes.length; i++) {
           var node = oDOM.firstChild.childNodes[i];
           if(node.nodeType !== Node.TEXT_NODE) {
@@ -112,11 +119,29 @@ class LegalXMLParser {
           var childNode = blockNode.childNodes[i];
           if(childNode.nodeType !== Node.TEXT_NODE) {
             if(childNode.localName == 'text') {
-                this.out_body += '<div>' + childNode.textContent.trim() + '</div>';
+
+                var marker = '';
+                if (this.marker_stack[0]['type'] == 'number') {
+                    marker = this.marker_stack[0]['next'] + '.';
+                    this.marker_stack[0]['next']++;
+                }
+
+                this.out_body += '<div>' + marker + ' ' + childNode.textContent.trim() + '</div>';
+
+
+
             } else if(childNode.localName == 'block') {
                 this._process_body_node_block_actual_block_node(childNode);
             } else if(childNode.localName == 'item') {
+
+                this.marker_stack.unshift({
+                    'type': 'number',
+                    'next': 1,
+                })
+
                 this._process_body_node_block(childNode);
+
+                this.marker_stack.shift();
             }
 
           }
